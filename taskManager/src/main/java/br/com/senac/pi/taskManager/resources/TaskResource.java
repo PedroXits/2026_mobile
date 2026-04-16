@@ -17,6 +17,10 @@ public class TaskResource {
 
     private final TaskService taskService;
 
+    public TaskResource(TaskService taskService) {
+        this.taskService = taskService;
+    }
+
     //http://localhost:8080/api/tasks/1
     @GetMapping("/{id}")
     public ResponseEntity<TaskDTO> fetchById(@PathVariable Long id){
